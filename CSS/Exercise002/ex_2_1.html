@@ -10,7 +10,7 @@
         }
         .container{
             padding: 2rem;
-            width: 60vw;
+            width: 50vw;
             margin: auto;
             /* display: flex;
             flex-direction: column;
@@ -43,12 +43,58 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            margin: 1rem 0 1rem 0;
+            
         }
         article .col2{
             /* background-color: royalblue; */
             margin-right: 10rem;
         }
-    </style>
+
+        /* footer controller */
+        .footer-controller{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            /* background-color: red; */
+        }
+        .footer-controller aside{
+            font-size: 2.05rem;
+            width: 350px;
+            border: 0.44rem solid black;
+            border-left: none;
+            border-right: none;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .quote-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .prn{
+            /* background-color: aquamarine; */
+            margin-top: 2rem;
+        }
+
+        /* progress section */
+        progress {
+            -webkit-appearance: none;
+        }
+
+        ::-webkit-progress-bar {
+            background-color: white;
+            border: #9baec8 solid 1px;
+            
+        }
+
+        ::-webkit-progress-value {
+            background-color: #8ab6f5;
+        }
+
+</style>
 </head>
 
 <body>
@@ -57,16 +103,16 @@
             <h1>SW Studio Today</h1>
         </header>
         <header class="article">
-            <h2>The record of the CSS class</h2>
+            <h2 style="margin: 1rem 0 1rem 0;">The record of the CSS class</h2>
         </header>
         <div class="reporter">
             <div class="img-reporter">
                 <img src="https://previews.123rf.com/images/gmast3r/gmast3r1809/gmast3r180900199/109840480-brunette-businessman-avatar-man-face-profile-icon-concept-online-support-service-male-cartoon-charac.jpg"
                 alt="picture" width=200 style="border: 4px solid #4783b2;">
             </div>
-            <div class="text-reporter">
-                Reported by <br>Mr. or Ms. Xxxx xxxx<br> (nickname)<br> ID yyyyyyyy<br><br><time
-                datetime="2020-02-14">Feb 14, 2023</time>
+            <div class="text-reporter" style="color:#4783b2 ;">
+                Reported by <br>Mr. Worahote Jairew<br> (Time)<br> ID 64010757<br><br><time
+                datetime="2023-01-26"><span style="color:#dda1db;">Feb 26, 2023</span></time>
             </div>
     
         </div>
@@ -95,29 +141,37 @@
                 </ol>
             </section>
         </article>
-    
-        <aside>
-            <p><em>your quote of today's class</em></p>
-        </aside>
-    
-        <section class="prog">
-            <p>Progress of today's class <progress value="2" max="5"></progress></p>
-        </section>
-    
-        <section class="luckd">
-            <p>register for lucky draw</p>
-            <form>
-                <fieldset>
-                    <label>Name:</label><em>*</em> <input type="text" id="name" placeholder="John Smith" autofocus
-                        required><br>
-                    <label>email:</label><em>*</em> <input type="email" id="email" placeholder="abc@def.com" autofocus
-                        required><br>
-                    <label>Tel:</label><em>*</em> <input type="tel" id="tel" placeholder="0xx-xxxxxxx"
-                        pattern="[0-9]{3}-[0-9]{7}" autofocus required><br>
-                    <input type="submit">
-                </fieldset>
-            </form>
-        </section>
+        
+        <div class="footer-controller">
+            <aside>
+                <div class="quote-text">
+                    <p><em>your quote of <br>today's class</em></p>
+                </div>
+            </aside>
+            
+            <div class="prn" >
+                <section class="prog">
+                    <p>Progress of today's class <progress value="2" max="5"></progress></p>
+                </section>
+                <br>
+                <section class="luckd">
+                    <p>register for lucky draw</p>
+                    <br>
+                    <form>
+                        <fieldset>
+                            <label>Name:</label><em>*</em> <input type="text" id="name" placeholder="John Smith" autofocus
+                                required><br>
+                            <label>email:</label><em>*</em> <input type="email" id="email" placeholder="abc@def.com" autofocus
+                                required><br>
+                            <label>Tel:</label><em>*</em> <input type="tel" id="tel" placeholder="0xx-xxxxxxx"
+                                pattern="[0-9]{3}-[0-9]{7}" autofocus required><br>
+                            <input type="submit">
+                        </fieldset>
+                    </form>
+                </section>
+            </div>
+        </div>
+  
         <footer>
             ce.kmitl all rights reserved & copyright 2020
         </footer>
