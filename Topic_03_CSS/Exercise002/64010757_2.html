@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title Ex_2_2</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .container {
+            padding: 2rem;
+            width: 80vw;
+            margin: auto;
+        }
+
+        /* add sub-container */
+        .sub-container{
+            /* background-color: red; */
+            width: 70%;
+            margin: auto;
+            /* padding: 4rem; */
+        }
+
+        /* profile section */
+        .top,
+        footer {
+            text-align: center;
+            background-color: #ffd536;
+            color: #0026f9;
+        }
+
+        .article {
+            text-align: center;
+            color: #dda1db;
+        }
+
+        .reporter {
+            display: flex;
+            flex-wrap: wrap;
+            /* background-color: aquamarine; */
+            justify-content: space-between;
+            flex-direction: row-reverse;
+        }
+
+        /* article section */
+        article {
+            /* background-color: bisque; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 1rem 0 1rem 0;
+
+        }
+
+        article .col2 {
+            /* background-color: royalblue; */
+            margin-right: 10rem;
+        }
+
+        /* footer controller */
+        .footer-controller {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            /* background-color: red; */
+        }
+
+        .footer-controller aside {
+            font-size: 40px;
+            width: 450px;
+            border: 0.2rem solid black;
+            border-left: none;
+            border-right: none;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .quote-text {
+            position: absolute;
+            top: 50%;
+            left: 0%;
+            transform: translate(0%, -50%);
+        }
+
+        .prn {
+            /* background-color: aquamarine; */
+            margin-top: 2rem;
+        }
+
+        /* progress section */
+        /* progress {
+            -webkit-appearance: none;
+        } */
+
+        ::-webkit-progress-value {
+            background-color: #8ab6f5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="top">
+            <h1>SW Studio Today</h1>
+        </header>
+        <div class="sub-container">
+            <header class="article">
+                <h2 style="margin: 1rem 0 1rem 0;">The record of the CSS class</h2>
+            </header>
+            <div class="reporter">
+                <div class="img-reporter">
+                    <img src="https://previews.123rf.com/images/gmast3r/gmast3r1809/gmast3r180900199/109840480-brunette-businessman-avatar-man-face-profile-icon-concept-online-support-service-male-cartoon-charac.jpg"
+                        alt="picture" width=200 style="border: 4px solid #4783b2;">
+                </div>
+                <div class="text-reporter" style="color:#4783b2 ;">
+                    Reported by <br>Mr. Worahote Jairew<br> (Time)<br> ID 64010757<br><br><time
+                        datetime="2023-01-26"><span style="color:#dda1db;">Jan 26, 2023</span></time>
+                </div>
+
+            </div>
+            <article>
+                <section class="col1">
+                    <h3>Introduction</h3>
+                    <br>
+                    <p>describe your background about CSS e.g.
+                    <br>
+                    <ul>
+                        <li>do you know CSS?</li>
+                        <li>Have you ever been using CSS?</li>
+                        <li>Have you ever worked with CSS before?</li>
+                        <li>Have you any idea how CSS works?</li>
+                        <li>What are you expecting from CSS?</li>
+                        <li>etc.</li>
+                    </ul>
+                </section>
+
+                <section class="col2">
+                    <h3>The expectation</h3>
+                    <br>
+                    <p>Describe your expectations for today's class</p>
+                    <br>
+                    <p>You can list it like this:</p>
+                    <br>
+                    <ol>
+                        <li>expect #1</li>
+                        <li>expect #2</li>
+                        <li>expect #3</li>
+                    </ol>
+                </section>
+            </article>
+
+            <div class="footer-controller">
+                <aside>
+                    <div class="quote-text">
+                        <p><em>your quote of <br>today's class</em></p>
+                    </div>
+                </aside>
+
+                <div class="prn">
+                    <section class="prog">
+                        <p>Progress of today's class <progress value="2" max="5"></progress></p>
+                    </section>
+                    <br>
+                    <section class="luckd">
+                        <p>register for lucky draw</p>
+                        <br>
+                        <form>
+                            <fieldset>
+                                <label>Name:</label><em>*</em> <input type="text" id="name" placeholder="John Smith"
+                                    autofocus required><br>
+                                <label>email:</label><em>*</em> <input type="email" id="email" placeholder="abc@def.com"
+                                    autofocus required><br>
+                                <label>Tel:</label><em>*</em> <input type="tel" id="tel" placeholder="0xx-xxxxxxx"
+                                    pattern="[0-9]{3}-[0-9]{7}" autofocus required><br>
+                                <input type="submit">
+                            </fieldset>
+                        </form>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+        <footer>
+            ce.kmitl all rights reserved & copyright 2020
+        </footer>
+    </div>
+
+</body>
+
+</html>

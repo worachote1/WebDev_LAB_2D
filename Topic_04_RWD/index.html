@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- สําหรับใช้ API mapbox -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+
+    <title>64010757_ex3</title>
+
+    <link rel="icon" href="data:image/jpeg;base64,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">
+    <!-- font awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!--  ฟ้อน Mitr  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Mitr', sans-serif;
+        }
+
+        #showcase-img {
+            /* width: 70%;
+    height: 100%;   */
+            width: 50%;
+            height: 100%;
+        }
+
+        #my-promotion-img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #my-investor-img {
+            width: 100%;
+            height: 100%
+        }
+
+        .dev-img {
+            width: 100%;
+            height: 100%
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">PRN ASSET <i class="fab fa-fort-awesome"></i></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">หน้าแรก <i class="fas fa-building"></i></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Real estate <i class="fas fa-home"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#my-product">บ้าน</a></li>
+                            <li><a class="dropdown-item" href="#my-product">คอนโดมิเนียม</a></li>
+                            <li><a class="dropdown-item" href="#my-product">ทาวน์โฮม/โฮมออฟฟิศ</a></li>
+                            <li><a class="dropdown-item" href="#my-promotion ">โปรโมชั่น</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#my-investor">นักลงทุนสัมพันธ์</a></li>
+                            <li><a class="dropdown-item" href="#">สมัครงาน</a></li>
+                            <li><a class="dropdown-item" href="#">การเสนอขายที่ดิน</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#my-question">คําถามที่พบบ่อย <i class="fas fa-question"></i></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#my-team-dev">About us <i class="fas fa-users"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#my-contact"> Contact <i class="fas fa-headset"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Setting <i class="fas fa-cog"></i> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-success rounded nav-link mb-2 mx-2" href="#">เข้าสู่ระบบ</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="btn btn-outline-danger rounded nav-link mx-2" href="#">Log out <i
+                                class="fas fa-sign-out-alt"></i> </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- show case -->
+    <section class="bg-dark text-light p-5 ">
+        <div class="container ">
+            <!-- using flex box -->
+            <div class="d-column d-sm-flex  align-items-center 
+            justify-content-between">
+                <div class="">
+                    <h1 class="text-center">Become a <span class="text-success">Real-Estate Agent </span> </h1>
+                    <p class="my-4">
+                        Real estate agents are licensed professionals who organize real estate transactions between
+                        buyers and sellers. Agents who represent sellers are also called listing agents.
+                        Real estate agents walk their clients through the entire home buying or selling process,
+                        providing valuable knowledge and information at each step.
+                        </pre>
+                </div>
+                <img src="https://prn--asset.web.app/img/showcase-1.jpg" alt="" id="showcase-img" class="img-fluid ms-5  d-none d-sm-block">
+            </div>
+            <button class="btn btn-outline-success btn-lg mt-4">Apply for a job at PRN ASSET</button>
+        </div>
+    </section>
+
+    <!-- เยี่ยมชมโครงการ -->
+    <section class="bg-success text-light p-5">
+        <div class="container">
+            <div class="d-column d-sm-flex align-items-center justify-content-between">
+                <h2>Sign up to visit Our properties</h2>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" placeholder="64010757@kmitl.ac.th">
+                    <button class="btn btn-primary btn-lg" type="submit" id="button-addon2"> Sign up</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Boxes -->
+    <section class="p-5 " id="my-product">
+        <div class="container ">
+            <div class="row g-4">
+                <div class="col-12 col-sm-12 col-lg-4">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body">
+                            <div class="my-top-card text-center mb-4">
+                                <h1> <i class="fas fa-home"></i> </h1>
+                                <h5 class="card-title">House</h5>
+                            </div>
+
+                            <p class="card-text">
+                                รวมโครงการบ้านเดี่ยว บ้านหรู คฤหาสน์ บ้านเดี่ยวพร้อมอยู่ ดีไซน์หลากหลาย บนทำเลศักยภาพ
+                                ตอบโจทย์ทุกการใช้ชีวิต สร้างสรรค์ทุกรายละเอียด บ้านเดี่ยวพร้อมอยู่ทุกทำเล
+                                บนทำใจกลางเมืองกรุงเทพและปริมณฑล เดินทางสะดวกใกล้รถไฟฟ้า และทางด่วน
+                                ครบครันด้วยฟังก์ชันและดีไซน์เป็นเอกลักษณ์ ใส่ใจทุกรายละเอียดของการใช้ชีวิต
+                                พร้อมนวัตกรรมรองรับไลฟ์สไตล์ของคนยุคใหม่และการใช้ชีวิตของผู้สูงอายุ
+                                เชื่อมต่อสังคมคุณภาพด้วยคลับเฮาส์ และส่วนกลางขนาดใหญ่
+                                ให้คุณได้พักผ่อนในบรรยากาศความเป็นส่วนตัวสูงสุด อุ่นใจด้วยระบบรักษาความปลอดภัยสูงสุด
+                                ตลอด 24 ชม. ครอบคลุมทุกพื้นที่ บ้านใหม่ที่พร้อมให้คุณเข้าอยู่วันนี้ ที่ PRN ASSET
+
+                            </p>
+                            <a href="#" class="btn btn-outline-success">เยี่ยมชมโครงการ</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-lg-4">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body">
+                            <div class="my-top-card text-center mb-4">
+                                <h1> <i class="fab fa-houzz"></i></h1>
+                                <h5 class="card-title">Town home / Home office</h5>
+                            </div>
+
+                            <p class="card-text">
+                                PRN ASSET โครงการทาวน์โฮม ทาวน์เฮ้าส์ โฮมออฟฟิศ ประกอบไปด้วย เวิร์ฟ (Verve),เวิร์คเพลส
+                                (Word Place) ที่ออกแบบมาเพื่อคนรุ่นใหม่ บนทำเลศักยภาพ โดดเด่นด้วยดีไซน์ทันสมัย
+                                ฟังก์ชันที่เป็นมากกว่าที่อยู่อาศัย พร้อมตอบโจทย์ช่วงเวลาแห่งการพักผ่อน ด้วยคลับเฮาส์
+                                และส่วนกลางขนาดใหญ่ ทาวน์โฮมที่จะทำให้คุณสามารถใช้เวลาร่วมกับครอบครัวได้อย่างคุ้มค่า
+                                พร้อมเทคโนโลยีทันสมัยที่ช่วยดูแลความปลอดภัยเต็มรูปแบบ
+                            </p>
+                            <a href="#" class="btn btn-outline-success">เยี่ยมชมโครงการ</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-lg-4">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body">
+                            <div class="my-top-card text-center mb-4">
+                                <h1> <i class="fas fa-city"></i></h1>
+                                <h5 class="card-title">Condominium</h5>
+                            </div>
+                            <p class="card-text">
+                                คอนโดมิเนียม คอนโดพร้อมอยู่ คอนโดใกล้รถไฟฟ้า คอนโดหรู ใจกลางเมือง บนทำเลศักยภาพ
+                                สร้างสรรค์ทุกรายละเอียด ดีไซน์สวย ตอบโจทย์ทุกการใช้ชีวิต โครงการคอนโดของ PRN ASSET
+                                ประกอบไปด้วย คอนโด ศาลาแดงวัน (Saladaeng One), คอนโด 28 ชิดลม (28 Chidlom), คอนโด บีทนิค
+                                (Beatniq), คอนโด เดอะ เครสท์ (The Crest), คอนโด เซ็นทริค (Centric), คอนโด แชมเบอร์ส
+                                (Chamber) คอนโดติดรถไฟฟ้า คอนโดใกล้ BTS แวดล้อมด้วยสิ่งอำนวยความสะดวก
+                                ที่พร้อมให้คุณได้รับประสบการณ์ใหม่ในการใช้ชีวิต ด้วยดีไซน์คอนโดที่ทันสมัย ฟังก์ชันครบ
+                                คอนโดตอบโจทย์ทุกไลฟ์สไตล์คนเมืองด้วยเทคโนโลยีที่ช่วยให้คุณใช้ชีวิตง่ายขึ้นผ่านสมาร์ทโฟน
+                                อุ่นใจด้วยระบบรักษาความปลอดภัยสูงสุด พร้อมบริการหลังการขายที่ใส่ใจในทุกรายละเอียด
+                                พร้อมมีบริการ Concierge Service สำหรับลูกบ้านโดยเฉพาะ
+                            </p>
+                            <a href="#" class="btn btn-outline-success">เยี่ยมชมโครงการ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ส่วน promotion -->
+    <secction id="my-promotion" class="p-5 ">
+        <div class="container ">
+            <div class="row align-items-center justify-content-between g-4">
+                <div class="col-12 col-sm-12 col-lg-6">
+                    <img src="https://prn--asset.web.app/img/promotion-1.jpg" alt="" id="my-promotion-img " class="img-fluid">
+                </div>
+                <div class="col-12 col-sm-12 col-lg-6">
+                    <h1 class="text-center">Promotion ต้อนรับปลายปี <i class="fas fa-money-check-alt"></i></h1>
+                    <p>
+                        คฤหาสน์หรู หลังใหญ่บนที่ดิน กว่า 177 ตร.วา
+                        แปลงมุม สุดส่วนตัว บนทำเลศักยภาพ กาญนาฯ-พระราม 2
+                        มาพร้อม ฟังก์ชั่น 4 ห้องนอน 5 ห้องน้ำ รองรับ 5 จอดรถ ห้องแม่บ้าน 2 ห้อง
+                        ให้ความเป็นส่วนตัวอย่างที่สุด บนเอกสิทธิสำหรับ 37 ครอบครัว
+                        รายล้อมบรรยากาศโครงการ ด้วยความร่มรื่นเติมความสุขทุกวันให้กับครอบครัว
+                    </p>
+                    <button class="btn btn-outline-primary btn-lg mt-3"><i class="fas fa-chevron-right"></i>
+                        ลงทะเบียน</button>
+                </div>
+
+            </div>
+        </div>
+    </secction>
+
+    <!-- ส่วนนักลงทุนสัมพันธ์ -->
+    <section id="my-investor" class="p-5 bg-dark text-light">
+        <div class="container">
+            <div class="row align-items-center justify-content-between g-4">
+                <div class="col-12 col-sm-12 col-lg-6">
+                    <h1 class="text-center">นักลงทุนสัมพันธ์ <i class="far fa-handshake"></i></h1>
+                    <p>
+                    <h3>บริษัท พีอาร์เอ็น แอสเสท คอร์ปอเรชั่น จำกัด (มหาชน)</h3>
+                    มุ่งมั่นในการเป็นบริษัทพัฒนาอสังหาริมทรัพย์ที่มีการเติบโตอย่างต่อเนื่อง และมีประสิทธิภาพ
+                    </p>
+                    <button class="btn btn-outline-primary btn-lg mt-3"><i class="fas fa-chevron-right"></i>
+                        ข่าวแจ้งตลาดหลักทรัพย์</button>
+                    <br>
+                    <!-- test btn dropdown -->
+                    <div class="btn-group mt-4" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                            data-bs-toggle="dropdown">
+                            เอกสารล่าสุด
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">ข้อมูลบริษัท</a></li>
+                            <li><a class="dropdown-item" href="#">งบการเงินล่าสุด</a></li>
+                            <li><a class="dropdown-item" href="#">ข้อมูลการนำเสนอ</a></li>
+                            <li><a class="dropdown-item" href="#">รายงานการประชุมผู้ถือหุ้นปี 2564</a></li>
+                            <li><a class="dropdown-item" href="#">อันดับเครดิตองค์กร</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-lg-6">
+                    <img src="https://prn--asset.web.app/img/my-investor-img.jpg" alt="" id="my-investor-img " class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ส่วน ถาม-ตอบ -->
+    <section id="my-question" class="p5 mt-4">
+        <div class="container">
+            <h1 class="mb-4 text-center">คําถามที่พบบ่อย</h1>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne">
+                            คำถามที่ 1. บริษัทมีเป้าหมายและกลยุทธ์หลักในการดำเนินงานอย่างไร
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            ตอบ : PRN มีเป้าหมายที่จะสร้างการเติบโตอย่างยั่งยืน โดยใช้กลยุทธ์ที่ยืดหยุ่น
+                            และปรับตัวอย่างรวดเร็ว (Resilience) เพื่อให้สามารถรับมือกับสถานการณ์ที่มีความไม่แน่นอน
+                            และสร้างผลการดำเนินงานและการเติบโตได้อย่างมีเสถียรภาพ
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo">
+                            คำถามที่ 2. บริษัทมีเป้าหมายทางธุรกิจในระยะยาว 3-5 ปีอย่างไร
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            ตอบ : ใน 3-5 ปี บริษัทมีเป้าหมายในการสร้างรายได้ต่อปีมากกว่า 20,000
+                            ล้านบาทขึ้นไปอย่างยั่งยืน โดยมีการเติบโตจากการพัฒนาอสังหาริมทรัพย์เพื่อขาย และ แบรนด์ PRN
+                            เป็นแบรนด์บ้านเดี่ยวอันดับ 1 ในใจของผู้คน ขณะเดียวกันจะขยายการลงทุนเพื่อเพิ่มสัดส่วนกำไรจาก
+                            recurring income ให้เพิ่มมากขึ้นอย่างต่อเนื่อง
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            คำถามที่ 3. นโยบายการจ่ายปันผล
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            ตอบ : บริษัทมีนโยบายที่จะจ่ายเงินปันผลให้แก่ผู้ถือหุ้นในอัตราไม่น้อยกว่าร้อยละ 40
+                            ของกำไรสุทธิหลังหักภาษีเงินได้นิติบุคคล และจัดสรรไว้เป็นทุนสำรองตามกฎหมาย
+                            ทั้งนี้การจ่ายเงินปันผลอาจมีการเปลี่ยนแปลงได้ ขึ้นอยู่กับผลประกอบการ แผนการขยายธุรกิจ
+                            สภาพคล่อง ความจำเป็น และความเหมาะสมอื่นๆในอนาคต
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ส่วน ผู้พัฒนา ทีม Developer  -->
+    <section class="p-5 mt-4 bg-primary" id="my-team-dev">
+        <div class="container ">
+            <h2 class="text-white text-center">Developer <i class="fas fa-laptop-code"></i> </h2>
+
+            <div class="row mt-4 g-4">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="card ">
+                        <div class="card-body">
+                            <img src="https://www.buriramunited.com/uploads/management/small/20210118/befgopsvxy23.jpg" alt="" class="dev-img rounded-circle">
+                            <h3 class="card-title my-4 ">Kim Gi-Myung</h3>
+                            <p class="card-text">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, temporibus.
+                            </p>
+                            <a href="#" class="btn "><i class="fab fa-facebook-square fa-2x"></i></a>
+                            <a href="#" class="btn "><i class="fab fa-instagram-square fa-2x"></i></a>
+                            <a href="#" class="btn "><i class="fab fa-linkedin fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="card ">
+                        <div class="card-body">
+                            <img src="https://www.buriramunited.com/uploads/management/small/20210118/befgopsvxy23.jpg" alt="" class="dev-img rounded-circle">
+                            <h3 class="card-title my-4 ">Robert Kiyosaki</h3>
+                            <p class="card-text">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, temporibus.
+                            </p>
+                            <a href="#" class="btn "><i class="fab fa-facebook-square fa-2x"></i></a>
+                            <a href="#" class="btn "><i class="fab fa-instagram-square fa-2x"></i></a>
+                            <a href="#" class="btn "><i class="fab fa-linkedin fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="card ">
+                        <div class="card-body">
+                            <img src="https://www.buriramunited.com/uploads/management/small/20210118/befgopsvxy23.jpg" alt="" class="dev-img rounded-circle">
+                            <h3 class="card-title my-4 ">Chae Won Seok</h3>
+                            <p class="card-text">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, temporibus.
+                            </p>
+                            <a href="#" class="btn "><i class="fab fa-facebook-square fa-2x"></i></a>
+                            <a href="#" class="btn "><i class="fab fa-instagram-square fa-2x"></i></a>
+                            <a href="#" class="btn "><i class="fab fa-linkedin fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="card ">
+                        <div class="card-body">
+                            <img src="https://www.buriramunited.com/uploads/management/small/20210118/befgopsvxy23.jpg" alt="" class="dev-img rounded-circle">
+                            <h3 class="card-title my-4 ">Lee Do-Gyun</h3>
+                            <p class="card-text">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, temporibus.
+                            </p>
+                            <a href="#" class="btn "><i class="fab fa-facebook-square fa-2x"></i></a>
+                            <a href="#" class="btn "><i class="fab fa-instagram-square fa-2x"></i></a>
+                            <a href="#" class="btn "><i class="fab fa-linkedin fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ส่วน contact -->
+    <!-- ค่อยมาทํา -->
+    <section class="p-5" id="my-contact">
+        <h2 class="text-white text-center">Contact <i class="fas fa-laptop-code"></i> </h2>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-sm-12 col-md-6">
+                    <h2 class="text-center mb-4">Contact Info</h2>
+                    <ul class="list-group list-group-flush lead">
+                        <li class="list-group-item">
+                            <span class="fw-bold">Main Location:</span> ถนน ราชดำเนิน ตำบลในเมือง อำเภอเมืองนครราชสีมา
+                            นครราชสีมา 30000
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">Phone:</span> 099-295-8953
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">Email:</span>
+                            agency@prnasset.com
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6">
+                    <div id="map">
+                        <!-- ขอkey ไม่ได้ เปลี่ยนใจ ใช้ iframe แทน -->
+                        <p>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3854.3288493290884!2d102.09596321887967!3d14.97443958257727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31194c9708d394f3%3A0xf7bc4b80b538e278!2z4Lit4LiZ4Li44Liq4Liy4Lin4Lij4Li14Lii4LmM4LiX4LmJ4Liy4Lin4Liq4Li44Lij4LiZ4Liy4Lij4Li1ICjguKLguYjguLLguYLguKEp!5e0!3m2!1sth!2sth!4v1633285237592!5m2!1sth!2sth"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer text-center p-4">
+        <div class="container">
+            <p> Copyright &copy; พีอาร์เอ็น แอสเสท คอร์ปอเรชั่น จำกัด (มหาชน) Official 2044</p>
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>
