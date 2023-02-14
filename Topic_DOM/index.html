@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="main-container"></div>
+    <script>
+        const mainContainer = document.querySelector('#main-container')
+        const header = document.createElement('div')
+        header.classList.add('header-container')
+        header.style.position = 'relative'
+        mainContainer.appendChild(header)
+        header.innerHTML = "<h1>Exercise 04: JavaScript&DOM</h1>"
+
+        mainContainer.style.width = '100vw'
+        mainContainer.style.height = '70vh'
+        // mainContainer.style.background = 'blue'
+        // mainContainer.style.margin = 'auto'
+        header.style.height = '100px'
+        header.style.width = '100%'
+        // header.style.background = 'red'
+
+        const buttonController = document.createElement('div')
+        buttonController.classList.add('btn-controller')
+        const btn = document.createElement("button");
+        header.appendChild(btn);
+        btn.innerText = "Click me to display Date and Time";
+        btn.style.position = 'absolute'
+        btn.style.bottom = '0'
+
+        // const personal_infor = document.createElement('p')
+        // personal_infor.innerText = "Personal Info"
+        // mainContainer.appendChild(personal_infor)
+
+        //personal section
+        const USER_Info = 'WORACHOTE JAIREW, ID: 64010757'
+        const SUBJECT_Info = 'Web Application Development'
+        const SEMESTER_Info = '2/2566'
+
+        const personalContainer = document.createElement('div')
+        personalContainer.classList.add('personal-container')
+        personalContainer.style.marginBlockStart = "2rem"
+        const personal_btn = document.createElement('a')
+        mainContainer.appendChild(personalContainer)
+        personal_btn.innerText = "Personal Info"
+        personal_btn.style.color = "pink"
+        personal_btn.style.textDecoration = "underline"
+        personal_btn.href = '#'
+        personalContainer.appendChild(personal_btn)
+
+        const personal_ul = document.createElement('ul')
+        const personal_name = document.createElement('li')
+        personal_name.innerText = `Name: ${USER_Info}`
+        personal_ul.appendChild(personal_name)
+        const personal_subject = document.createElement('li')
+        personal_subject.innerText = `Subject: ${SUBJECT_Info}`
+        personal_ul.appendChild(personal_subject)
+        const personal_semester = document.createElement('li')
+        personal_semester.innerText = `Semester: ${SEMESTER_Info}`
+        personal_ul.appendChild(personal_semester)
+
+        personal_ul.hidden = true
+        personalContainer.appendChild(personal_ul)
+
+        //personal section event
+        personal_btn.onmouseover = () => {
+            personal_btn.style.background = "yellow";
+            personal_btn.style.color = "blue";
+        };
+        personal_btn.onmouseout = () => {
+            personal_btn.style.background = "none";
+            personal_btn.style.color = "pink"
+        };
+        personal_btn.addEventListener("click", () => {
+            personal_ul.hidden = !personal_ul.hidden
+        })
+
+        //SnapShot shot section
+        const snapShot_container = document.createElement('div')
+        snapShot_container.classList.add('snapShot-container')
+        snapShot_container.style.marginBlockStart = "2rem"
+        const snapShot_text = document.createElement('h1')
+        snapShot_text.innerText = "Snapshots"
+        snapShot_container.appendChild(snapShot_text)
+        
+        const snapShot_ul = document.createElement('ul')
+        snapShot_container.appendChild(snapShot_ul)
+        let data_snapShot = [["Fireworks", "https://images.pexels.com/photos/949592/pexels-photo-949592.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+        ["Crest", "https://images.pexels.com/photos/303331/pexels-photo-303331.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+        ["Action", "https://images.pexels.com/photos/1117132/pexels-photo-1117132.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+        ["Buffalo", "https://images.pexels.com/photos/460223/pexels-photo-460223.jpeg?auto=compress&cs=tinysrgb&w=1600"]]
+
+
+        data_snapShot.forEach((data)=>{
+            let snapShot_li = document.createElement('li')
+            snapShot_ul.appendChild(snapShot_li)
+
+            let snapShot_link = document.createElement('a')
+            snapShot_link.innerHTML = data[0]
+            snapShot_link.href = "#"
+            snapShot_li.addEventListener("click", () => {
+                snapeShot_footer.src = `${data[1]}`
+            })
+            snapShot_li.appendChild(snapShot_link)
+        })
+        
+        const snapeShot_footer = document.createElement('img');
+        snapeShot_footer.style.width = "40%"
+        snapeShot_footer.src = 'https://www.ana-digi.com/wp-content/uploads/2021/11/SEIKO-Monster-KMITL-OPN.jpg'
+        
+        snapShot_container.appendChild(snapeShot_footer)
+        mainContainer.appendChild(snapShot_container)
+
+
+        // web worker and event method 
+        let Worker2 = null;
+        let startWorker = () => {
+            let my_worker = new Worker("./worker.js");
+            my_worker.onmessage = (message) => {
+                console.log(message)
+                btn.innerText = message.data.date_prn
+                btn.style.background = message.data.color_bg_btn
+                btn.style.color = message.data.color_text_btn
+            }
+            return my_worker;
+        };
+
+        let countClick = 0
+        btn.addEventListener("click", () => {
+            countClick += 1
+            if (countClick % 2 !== 0) {
+                Worker2 = startWorker()
+                Worker2.postMessage("Start_count")
+                btn.style.bottom = `${header.offsetHeight - btn.offsetHeight}px`
+                btn.style.right = '0'
+            }
+            else {
+                // Worker2.postMessage("End_count")
+                Worker2.terminate()
+                btn.style.bottom = '0'
+                btn.style.right = `${header.offsetWidth - btn.offsetWidth - 1}px`
+            }
+        });
+
+    </script>
+</body>
+
+</html>

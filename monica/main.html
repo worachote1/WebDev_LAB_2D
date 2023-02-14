@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+  <title>Exercise03_64010627</title>
+  <link rel="icon"
+    href="https://www.designtagebuch.de/wp-content/uploads/mediathek//2022/03/riot-games-bildmarke-1100x825.jpg">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!--  ฟ้อน  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Consolas:wght@400;500&display=swap" rel="stylesheet">
+  <!--  icon  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+  <!--button link-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .riot {
+      font-family: 'Mitr', sans-serif;
+    }
+
+    .fontNav {
+      font-family: 'Consolas', CSS;
+    }
+
+    .none {
+      border-style: none;
+    }
+
+    .circle {
+      border-radius: 50%;
+    }
+
+    .backg-esport {
+      background-image: url('my_bg.jpg');
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    div.transbox {
+      margin: 30px;
+      background-color: #ffffff;
+      border: 1px solid black;
+      opacity: 0.6;
+      filter: alpha(opacity=60);
+      /* For IE8 and earlier */
+    }
+
+    /* .img-main{
+      width: 100%;
+    } */
+
+  </style>
+</head>
+
+<body>
+  <!--navbar-->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top"
+    style="background-color: #e80027; color: rgb(255, 255, 255);">
+    <div class="container"> <!--container-fluid = ชิดซ้าย , container = มีย่อหน้า -->
+
+      <a class="navbar-brand" href="https://www.riotgames.com/en"" >
+            <img src="
+        https://www.designtagebuch.de/wp-content/uploads/mediathek//2022/03/riot-games-bildmarke-1100x825.jpg"
+        alt="picture" width=80>
+        <t class="text-white riot fw-bolder">RIOT</t>
+      </a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <!--aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"-->
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link fontNav fw-normal" href="#Home"><i class="fa fa-home"
+                style="font-size:20px;color:rgb(255, 255, 255)" ;></i>&emsp;</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link fontNav fw-normal" style="color: rgb(255, 255, 255);" href="#About us">About us&emsp;</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link fontNav fw-normal" style="color: rgb(255, 255, 255);" href="#Games">Games&emsp;</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link fontNav fw-normal" style="color: rgb(255, 255, 255);" href="#Esports">Esports&emsp;</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fontNav fw-normal" style="color: rgb(255, 255, 255);"
+              href="#Animation">Animation&emsp;</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fontNav fw-normal" style="color: rgb(255, 255, 255);" href="#Music">Music&emsp;</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fontNav fw-normal" style="color: rgb(255, 255, 255);" href="#Sign up">Sign up&emsp;</a>
+          </li>
+      </div>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="username" placeholder="username" aria-label="username">
+        <button class="btn btn-outline-success" type="submit" style="color: rgb(255, 255, 255);">Login</button>
+      </form>
+    </div>
+    </div>
+  </nav>
+  <!-- Show Home -->
+  <section class="bg-dark text-light " id="Home">
+    <!-- <div class="container"> -->
+      <!-- <div class="img-main d-column d-sm-flex  align-items-center 
+          justify-content-between"> -->
+        <img src="https://assets.beartai.com/uploads/2022/06/FVEXdaTVsAEm8RJ.jpg" alt="picture">
+      <!-- </div> -->
+
+    <!-- </div> -->
+  </section>
+
+  <!-- Sign up -->
+  <section id="Sign up" class="bg-dark text-light p-5">
+    <div class="container">
+      <div class="d-column d-sm-flex align-items-center justify-content-between">
+        <h2>Sign up to visit Our properties</h2>
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" placeholder="example@gmail.com">
+          <button class="btn btn-danger btn-lg" type="submit" id="button-addon2"> Sign up</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--About us-->
+  <secction id="About us" class="p-5 ">
+    <div class="container ">
+      <div class="row align-items-center justify-content-between g-4">
+        <div class="  col-lg-6">
+          <br>
+          <img
+            src="https://cdn.vox-cdn.com/thumbor/jGb-cePQvYhAJPP8aW8hHqK0kIY=/0x0:960x540/1220x813/filters:focal(726x78:878x230):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/48852879/riot_games_workplace.0.jpg"
+            alt="" id="my-promotion-img " class="img-fluid">
+        </div>
+        <div class="col-12 col-sm-12 col-lg-5">
+          <h1 class="text-center">About us <br></i></h1>
+          <p class="text-left">
+            Riot Games, Inc. is an American video game developer, publisher and esports tournament organizer based in
+            Los Angeles, California. It was founded in September 2006 by Brandon Beck and Marc Merrill to develop League
+            of Legends and went on to develop several spin-off games and the unrelated first-person shooter game
+            Valorant. In 2011, Riot Games was acquired by Chinese conglomerate Tencent. Riot Games' publishing arm, Riot
+            Forge, oversees the production of League of Legends spin-offs by other developers. The company worked with
+            Fortiche to release Arcane, a television series based on the League of Legends universe.
+          </p>
+
+          <a href="https://www.riotgames.com/en/work-with-us/offices"
+            class="w3-button w3-white w3-border w3-border-red w3-round-large w3-hover-red w3-text-red">Our office</a>
+
+        </div>
+
+      </div>
+    </div>
+  </secction>
+
+  <!--Game-->
+  <section id="Games" class="p-5 mt-3" style="background-color: black;">
+    <div class="container ">
+      <p class="text-white text-center">
+        <img src="http://myweb.cmu.ac.th/seattasin_s/wed/game.jpg" width=400>
+      </p>
+      <div class="row g-4 align-items-center">
+        <!--LOL-->
+        <div class="col-12 col-sm-12  col-lg-4">
+          <div class="card none " style="background-color: black;">
+            <div class="card-body ">
+              <img
+                src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/397972f8-01a2-4875-8883-67c0db216b0f/dc98ykg-487bc7a9-cc47-4d45-9d39-1303e1f1280e.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM5Nzk3MmY4LTAxYTItNDg3NS04ODgzLTY3YzBkYjIxNmIwZlwvZGM5OHlrZy00ODdiYzdhOS1jYzQ3LTRkNDUtOWQzOS0xMzAzZTFmMTI4MGUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ki_cru6a8DIfnvn2sRESf46mDzDeTd-XzbX0qaW8tsA"
+                alt="picture" width=385>
+            </div>
+            <a href="https://www.leagueoflegends.com/en-us/?utm_source=riotbar&utm_medium=productcard%2Bwww.riotgames.com&utm_campaign=lol&utm_content=lol_keyart01"
+              class="w3-button w3-black w3-border w3-border-red w3-round-large w3-hover-red text-center w3-text-red">DOWLOAD</a>
+          </div>
+        </div>
+        <!--VALORANT-->
+        <div class="col-12 col-sm-12  col-lg-4">
+          <div class="card none " style="background-color: black;">
+            <div class="card-body ">
+              <img
+                src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/46b63d3c-ae67-464c-9a37-670829b2a157/ddw4dpz-d63ecf90-7c9e-40c0-a65f-6ab715b743ef.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQ2YjYzZDNjLWFlNjctNDY0Yy05YTM3LTY3MDgyOWIyYTE1N1wvZGR3NGRwei1kNjNlY2Y5MC03YzllLTQwYzAtYTY1Zi02YWI3MTViNzQzZWYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.MarY5WWMk7bNIaUdP9yKtEQLYN7bGsiz-BeO49HUdHw"
+                alt="picture" width=365>
+              &emsp;&emsp;
+            </div>
+            <a href="https://playvalorant.com/en-us/?utm_source=riotbar&utm_medium=productcard%2Bwww.riotgames.com&utm_campaign=val&utm_content=ep6act1"
+              class="w3-button w3-black w3-border w3-border-red w3-round-large w3-hover-red text-center w3-text-red">DOWLOAD</a>
+          </div>
+        </div>
+        <!--TEAMFIGHT TACTICS-->
+        <div class="col-12 col-sm-12  col-lg-4">
+          <div class="card none " style="background-color: black;">
+            <div class="card-body ">
+              <img src="https://i.blogs.es/b1b2bf/tft-para-moviles/1366_2000.jpg" class="circle" width=385 height="385">
+            </div>
+            <a href="https://teamfighttactics.leagueoflegends.com/en-us/?utm_source=riotbar&utm_medium=productcard%2Bplayvalorant.com&utm_campaign=tft&utm_content=tft_keyart_set8release"
+              class="w3-button w3-black w3-border w3-border-red w3-round-large w3-hover-red text-center w3-text-red">DOWLOAD</a>
+          </div>
+        </div>
+        <!--LEGENDS OF RUNETERRA-->
+        <div class="col-12 col-sm-12  col-lg-4">
+          <div class="card none " style="background-color: black;">
+            <div class="card-body ">
+              <img
+                src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0644eee9-dc20-412a-9c19-45675955c520/ddpgld9-8c1d8f99-7a0b-4fdc-b5fa-19c86091c2b2.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzA2NDRlZWU5LWRjMjAtNDEyYS05YzE5LTQ1Njc1OTU1YzUyMFwvZGRwZ2xkOS04YzFkOGY5OS03YTBiLTRmZGMtYjVmYS0xOWM4NjA5MWMyYjIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.bCcYB19IMv35rYex-gszZjMhNEDoLYQD2a3Dg1EJH8Y"
+                alt="picture" width=385>
+            </div>
+            <a href="https://playruneterra.com/en-us/?utm_source=riotbar&utm_medium=productcard%2Bteamfighttactics.leagueoflegends.com&utm_campaign=lor&utm_content=lor_keyart_set6aatrox"
+              class="w3-button w3-black w3-border w3-border-red w3-round-large w3-hover-red text-center w3-text-red">DOWLOAD</a>
+          </div>
+        </div>
+        <!--WILD RIFT-->
+        <div class="col-12 col-sm-12  col-lg-4">
+          <div class="card none " style="background-color: black;">
+            <div class="card-body ">
+              <img src="https://i0.wp.com/gamingonphone.com/wp-content/uploads/2019/11/lol-wild-rift-2.jpg"
+                class="circle" width=385 height="385">
+            </div>
+            <a href="https://wildrift.leagueoflegends.com/en-us/?utm_source=riotbar&utm_medium=productcard%2Bplayruneterra.com&utm_campaign=wr&utm_content=wr_keyart01"
+              class="w3-button w3-black w3-border w3-border-red w3-round-large w3-hover-red text-center w3-text-red">DOWLOAD</a>
+          </div>
+        </div>
+        <!--RUINED KING-->
+        <div class="col-12 col-sm-12  col-lg-4">
+          <div class="card none " style="background-color: black;">
+            <div class="card-body ">
+              <img src="https://i.scdn.co/image/ab67616d0000b2735ddc4075c4e6bbf322a24ee9" class="circle" width=385
+                height="385">
+            </div>
+            <a href="https://store.steampowered.com/app/1276790/Ruined_King_A_League_of_Legends_Story/"
+              class="w3-button w3-black w3-border w3-border-red w3-round-large w3-hover-red text-center w3-text-red">DOWLOAD</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--ESPORTS-->
+  <section id="Esports" class="p-2 "
+    style="background-image: url('https://am-a.akamaihd.net/image?resize=3200:1300&f=http%3A%2F%2Fassets.lolesports.com%2Fwatch%2Farticle%2Fheader-fallback.png') ;">
+    <div class="container ">
+      <p class="text-white text-center">
+        <img src="https://cdn.discordapp.com/attachments/822113840387850262/1071837471370915900/Untitled_Artwork.png"
+          width=250>
+      </p>
+      <div class="row align-items-center">
+        <!--LOL ESPORT-->
+        <div class="col-lg-6">
+          <div class="card none bg-dark">
+            <div class="card-body ">
+              <img src="https://cdn.discordapp.com/attachments/822113840387850262/1071838518915121252/image.png"
+                alt="picture" width=600>
+            </div>
+            <a href="https://lolesports.com/schedule?leagues=pcs"
+              class="w3-button w3-black w3-border w3-border-red w3-round-large w3-hover-red text-center w3-text-red">SCHEDULE</a>
+
+          </div>
+        </div>
+        <div class="col-lg-6 col-12 col-sm-1">
+          <div class="card none bg-dark">
+            <div class="card-body ">
+              <img src="https://cdn.discordapp.com/attachments/822113840387850262/1071838617074401311/image.png"
+                alt="picture" width=600>
+            </div>
+            <a href="https://valorantesports.com/?utm_source=riotbar&utm_medium=productcard%2Bwww.riotgames.com&utm_campaign=valesports&utm_content=valesports_keyart01"
+              class="w3-button w3-black w3-border w3-border-red w3-round-large w3-hover-red text-center w3-text-red">SCHEDULE</a>
+          </div>
+        </div>
+
+  </section>
+
+  <!--Animation-->
+  <section id="Animation" class="p-5 bg-dark text-light">
+    <div class="container">
+      <div class="row align-items-center justify-content-between g-4">
+        <div class="col-12 col-sm-12 col-lg-6">
+          <img
+            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7268c79-9436-4230-b75e-2814495b25f4/deub55g-4d825ca6-83ad-409b-b56d-5fbd286091d9.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2M3MjY4Yzc5LTk0MzYtNDIzMC1iNzVlLTI4MTQ0OTViMjVmNFwvZGV1YjU1Zy00ZDgyNWNhNi04M2FkLTQwOWItYjU2ZC01ZmJkMjg2MDkxZDkucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.RQ9yyhal5euKfmBslNDn4B6iA5mBrUCqL_vPGK9TKtw"
+            alt="" id="my-investor-img " class="img-fluid rounded">
+        </div>
+        <div class="col-lg-6">
+          <h1 class="text-center text-warning">A HOUSE DIVIDED</h1>
+          <br>
+          <p>
+          <h4>Two sisters. Two cities. One discovery that will change the world forever.</h4>
+
+          <h4>In the cities of Piltover and Zaun, unrest stirs as inventors and thieves, politicians and crime lords
+            chafe against the constraints of a society torn asunder. As dissent reaches a fever pitch, two sisters steal
+            an artifact of untold power. Discovery and danger intertwine as heroes are born and bonds are broken. Will
+            this power change the world, or lead it to ruin? This is the world of Arcane.</h4>
+
+          </p>
+          <div class="row p-5 g-4 align-items-center">
+            <div class="col-12 col-sm-12  col-lg-8 ">
+              <a href="https://youtu.be/32oT-CWJOC0"
+                class="w3-button w3-black w3-border w3-border-red w3-round-large w3-hover-red text-center w3-text-red">WACTCH
+                TRAILER<i class="right-toggle"></i></a>
+            </div>
+            <div class="col-lg-3 col-12 col-sm-3 ">
+              <a href="https://www.netflix.com/title/81435684"
+                class="w3-button w3-black w3-border w3-border-red w3-round-large w3-hover-red text-center w3-text-red">WACTCH
+                NOW<i class="right-toggle"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Music-->
+  <section id="Music" class="p-2" style="background-color: black;">
+    <div class="container ">
+      <p class="text-white text-center">
+        <img src="https://cdn.discordapp.com/attachments/822113840387850262/1071885543790608474/image.png" width=300>
+      </p>
+    </div>
+    <div class="row g-3 align-items-center">
+      <div class="col-12 col-sm-12  col-lg-2">
+        <div class="card none " style="background-color: black;">
+          <div class="card-body">
+            <a href="https://found.ee/LunarRevel2023">
+              <img
+                src="https://media.discordapp.net/attachments/822113840387850262/1071892514660950197/IMG_6107.jpg?width=262&height=476"
+                alt="picture" width=220></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12  col-lg-2">
+        <div class="card none " style="background-color: black;">
+          <div class="card-body ">
+            <a href="https://found.ee/VALVISIONS">
+              <img
+                src="https://media.discordapp.net/attachments/822113840387850262/1071892513780150382/IMG_6108.jpg?width=261&height=475"
+                alt="picture" width=220></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12  col-lg-2">
+        <div class="card none " style="background-color: black;">
+          <div class="card-body ">
+            <a href="https://found.ee/WorldEnderPredator">
+              <img src="https://cdn.discordapp.com/attachments/822113840387850262/1071894341108367462/IMG_6111.jpg"
+                alt="picture" width=220></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12  col-lg-2">
+        <div class="card none " style="background-color: black;">
+          <div class="card-body ">
+            <a href="https://found.ee/sessionsdiana">
+              <img src="https://cdn.discordapp.com/attachments/822113840387850262/1071894339183190117/IMG_6110.jpg"
+                alt="picture" width=220></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12  col-lg-2">
+        <div class="card none " style="background-color: black;">
+          <div class="card-body ">
+            <a href="https://found.ee/VAL_MV_MNT">
+              <img src="https://cdn.discordapp.com/attachments/822113840387850262/1071892511230005248/IMG_6109.jpg"
+                alt="picture" width=220></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12  col-lg-2">
+        <div class="card none " style="background-color: black;">
+          <div class="card-body ">
+            <a href="https://found.ee/alleyesonme">
+              <img src="https://cdn.discordapp.com/attachments/822113840387850262/1071894337924890716/IMG_6112.jpg"
+                alt="picture" width=220></a>
+          </div>
+        </div>
+      </div>
+
+
+  </section>
+
+
+
+</body>
+
+</html>
