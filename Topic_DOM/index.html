@@ -24,7 +24,7 @@
         mainContainer.appendChild(header)
         header.innerHTML = "<h1>Exercise 04: JavaScript&DOM</h1>"
 
-        mainContainer.style.width = '100vw'
+        mainContainer.style.width = '100%'
         mainContainer.style.height = '70vh'
         // mainContainer.style.background = 'blue'
         // mainContainer.style.margin = 'auto'
@@ -45,9 +45,15 @@
         // mainContainer.appendChild(personal_infor)
 
         //personal section
-        const USER_Info = 'WORACHOTE JAIREW, ID: 64010757'
-        const SUBJECT_Info = 'Web Application Development'
-        const SEMESTER_Info = '2/2566'
+        // const USER_Info = 'WORACHOTE JAIREW, ID: 64010757'
+        // const SUBJECT_Info = 'Web Application Development'
+        // const SEMESTER_Info = '2/2566'
+        const USER_info = {
+            "name" : "WORACHOTE JAIREW",
+            "id" : "64010757",
+            "subject" : "Web Application Development",
+            "semester" : "2/2566"
+        }
 
         const personalContainer = document.createElement('div')
         personalContainer.classList.add('personal-container')
@@ -62,13 +68,13 @@
 
         const personal_ul = document.createElement('ul')
         const personal_name = document.createElement('li')
-        personal_name.innerText = `Name: ${USER_Info}`
+        personal_name.innerText = `Name: ${USER_info.name}, ID: ${USER_info.id}`
         personal_ul.appendChild(personal_name)
         const personal_subject = document.createElement('li')
-        personal_subject.innerText = `Subject: ${SUBJECT_Info}`
+        personal_subject.innerText = `Subject: ${USER_info.subject}`
         personal_ul.appendChild(personal_subject)
         const personal_semester = document.createElement('li')
-        personal_semester.innerText = `Semester: ${SEMESTER_Info}`
+        personal_semester.innerText = `Semester: ${USER_info.semester}`
         personal_ul.appendChild(personal_semester)
 
         personal_ul.hidden = true
@@ -101,8 +107,8 @@
         ["Crest", "https://images.pexels.com/photos/303331/pexels-photo-303331.jpeg?auto=compress&cs=tinysrgb&w=1600"],
         ["Action", "https://images.pexels.com/photos/1117132/pexels-photo-1117132.jpeg?auto=compress&cs=tinysrgb&w=1600"],
         ["Buffalo", "https://images.pexels.com/photos/460223/pexels-photo-460223.jpeg?auto=compress&cs=tinysrgb&w=1600"]]
-
-
+        // https://gumlet.assettype.com/ejan%2F2022-03%2Fe243c474-a0c2-4cf2-9649-20850699356b%2F1_________________________.jpg?auto=format%2Ccompress&format=webp&w=400&dpr=2.6
+        //https://images.pexels.com/photos/460223/pexels-photo-460223.jpeg?auto=compress&cs=tinysrgb&w=1600
         data_snapShot.forEach((data)=>{
             let snapShot_li = document.createElement('li')
             snapShot_ul.appendChild(snapShot_li)

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <div id="main_container">
+    </div>
+    <script>
+
+        const main_container = document.getElementById("main_container");
+        main_container.style.height = "70vh"
+        main_container.style.width = "98vw"
+        // main_container.style.background = "red"
+
+        //header text
+        const headerContainer = document.createElement("div");
+        headerContainer.classList.add('header-container')
+        headerContainer.innerHTML = "<h1>Exercise 04: JavaScript&DOM</h1>";
+        headerContainer.style.height = '100px'
+        headerContainer.style.width = '100%'
+        // headerContainer.style.background = "blue"     
+        headerContainer.style.position = "relative"
+        main_container.appendChild(headerContainer);
+
+        //text
+        
+        const displayTime_button = document.createElement("button");
+        displayTime_button.innerHTML = "Click me to display Date and Time";
+        headerContainer.appendChild(displayTime_button);
+        displayTime_button.style.position = 'absolute'
+        displayTime_button.style.bottom = '0'
+       
+        //worker
+        let worker = null;
+        let createWorker = () =>{
+            let my_worker = new Worker("./64010726.js");
+            // displayTime_button.style.visibility = "hidden";
+            // changeColor();
+            // displayTime_button.innerHTML = new Date().toString();
+            // displayTime_button.hidden = false;
+            my_worker.onmessage = (message) =>{
+                console.log(message)
+                displayTime_button.innerHTML = message.data;
+                changeColorBg();
+                changeColorText();
+      
+            }
+            return my_worker;
+        };
+
+        //button
+        let toggle_btn = false
+        displayTime_button.addEventListener("click",() =>{
+            if (!(toggle_btn)){
+                worker = createWorker()
+                displayTime_button.style.bottom = `${headerContainer.offsetHeight-displayTime_button.offsetHeight}px`
+                displayTime_button.style.right = '0'
+                // displayTime_button.innerHTML = new Date().toString();
+                worker.postMessage("test")
+               
+            }
+            else{
+                worker.terminate()
+                displayTime_button.style.bottom = '0'
+                displayTime_button.style.right = `${headerContainer.offsetWidth-displayTime_button.offsetWidth-1}px`
+
+            }
+            toggle_btn = !toggle_btn
+            console.log(toggle_btn)
+        });
+        
+
+        //changColorbg
+        const color_data = ['#FCF19D', '#ACFC9D', '#9DFCE6','#ABCFF3','#D8AFFC','#FCAFED']
+        let indexcolor = 0;
+        const changeColorBg = () =>{
+            displayTime_button.style.backgroundColor = color_data[indexcolor];
+            indexcolor += 1;
+            indexcolor %= color_data.length;
+        };
+
+        //changColortext
+        const color_text = ['#F90514', '#0B7B09', '#28118F','#021345','#460366','#A70631']
+        let indexcolorText = 0;
+        const changeColorText = () =>{
+            displayTime_button.style.color = color_text[indexcolorText];
+            indexcolorText += 1;
+            indexcolorText %= color_text.length;
+        };
+
+        //personal
+        const personal_container = document.createElement("div");
+        personal_container.classList.add('personalContainer')
+        personal_container.style.marginBlockStart  = '30px'
+        main_container.appendChild(personal_container);
+
+        const personal_link = document.createElement("a");
+        personal_link.innerHTML = "Personal info"
+        personal_link.style.color="violet"
+        personal_link.href='#'
+
+       
+        personal_container.appendChild(personal_link);
+
+        //text personal
+
+        // let inPersonalInfo = document.createElement("ul");
+        // inPersonalInfo.hidden = true;
+
+        //text in personal
+
+        const personal_ul = document.createElement('ul')
+        personal_ul.hidden = true
+        //name_Info
+        const personalName = document.createElement('li')
+        personalName.innerText = "Name: Rattanaporn Domchainuek, ID: 64010726";
+        personal_ul.appendChild(personalName)
+
+        //subject_Info
+        const personalSubject = document.createElement('li')
+        personalSubject.innerText = "Subject: Web Application Development";
+        personal_ul.appendChild(personalSubject)
+
+        //semestep_Info
+        const personalSemestep = document.createElement('li')
+        personalSemestep.innerText = "Semester: 2/2566";
+        personal_ul.appendChild(personalSemestep)
+
+
+        personal_container.appendChild(personal_ul);
+
+        personal_link.onmouseover = () =>{
+            personal_link.style.background = "yellow"
+            personal_link.style.color = "Blue"
+        };
+        personal_link.onmouseout = () =>{
+            personal_link.style.background = "transparent"
+            personal_link.style.color = "violet"
+        };
+
+
+        personal_link.onclick = () =>{
+            personal_ul.hidden = !personal_ul.hidden;
+            console.log(personal_ul.hidden)
+        };
+
+
+
+    </script>
+</body>
+
+</html>
