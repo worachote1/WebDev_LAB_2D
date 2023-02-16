@@ -141,12 +141,14 @@
             if (countClick % 2 !== 0) {
                 Worker2 = startWorker()
                 Worker2.postMessage("Start_count")
-                btn.style.bottom = `${header.offsetHeight - btn.offsetHeight}px`
+                btn.style.position = 'fixed'
+                btn.style.bottom = `${window.innerHeight- btn.offsetHeight}px`
                 btn.style.right = '0'
             }
             else {
                 // Worker2.postMessage("End_count")
                 Worker2.terminate()
+                btn.style.position = 'absolute'
                 btn.style.bottom = '0'
                 btn.style.right = `${header.offsetWidth - btn.offsetWidth - 1}px`
             }
