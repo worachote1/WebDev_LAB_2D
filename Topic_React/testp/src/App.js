@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
-import Button from './components/Button';
-import FoodComponent from './components/FoodComponent';
 import FoodListComponent from './components/FoodListComponent';
 
 function App() {
@@ -22,23 +20,23 @@ function App() {
   },
   {
     "id": uuidv4(),
-    "type": "อาหารหวาน",
-    "name": "บัวลอย",
-    "img": "http://f.ptcdn.info/557/035/000/1442537793-IMG34862-o.jpg",
+    "type": "อาหารยํา",
+    "name": "ยํากุ้งสด",
+    "img": "https://numsups.com/wp-content/uploads/2020/12/c1d9e57195cf4a7f897f93f2921a8e46-1024x683.jpg",
     "detail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum lacinia ipsum nec tristique. Fusce a urna neque. Phasellus pellentesque lacinia justo, quis laoreet diam interdum ut. In congue lacus non neque molestie scelerisque. Vestibulum imperdiet, magna nec ornare tristique, quam mauris lobortis tellus, et ullamcorper nibh enim et lorem."
   },
   {
     "id": uuidv4(),
-    "type": "อาหารหวาน",
-    "name": "บัวลอย",
-    "img": "http://f.ptcdn.info/557/035/000/1442537793-IMG34862-o.jpg",
+    "type": "อาหารทอด",
+    "name": "ไข่เจียว",
+    "img": "https://www.cpbrandsite.com/contents/tips_tricks/6mywyhx1dlfhzz3yzdq7ysoftizn7t1zotlqjxhn.jpg",
     "detail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum lacinia ipsum nec tristique. Fusce a urna neque. Phasellus pellentesque lacinia justo, quis laoreet diam interdum ut. In congue lacus non neque molestie scelerisque. Vestibulum imperdiet, magna nec ornare tristique, quam mauris lobortis tellus, et ullamcorper nibh enim et lorem."
   },
   {
     "id": uuidv4(),
-    "type": "อาหารหวาน",
-    "name": "บัวลอย",
-    "img": "http://f.ptcdn.info/557/035/000/1442537793-IMG34862-o.jpg",
+    "type": "อาหารย่าง",
+    "name": "ไก่ย่างมิชลิน",
+    "img": "https://static.naewna.com/uploads/news/source/628647.jpg",
     "detail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum lacinia ipsum nec tristique. Fusce a urna neque. Phasellus pellentesque lacinia justo, quis laoreet diam interdum ut. In congue lacus non neque molestie scelerisque. Vestibulum imperdiet, magna nec ornare tristique, quam mauris lobortis tellus, et ullamcorper nibh enim et lorem."
   }
   ])

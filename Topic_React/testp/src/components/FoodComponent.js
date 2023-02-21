@@ -5,9 +5,9 @@ export default function FoodComponent({food}) {
     <div className='food-card'>
       <div className='food-data'>
           <div>
-            <h2>{food.name}</h2>
+            <h1>{food.type}</h1>
           </div>
-          <div>{food.type}</div>
+          <div><h3>{food.name}</h3></div>
           <div>{food.detail}</div>
       </div>
       <div className='food-img'>
