@@ -16,7 +16,7 @@ export default function FoodComponent({ food }) {
     else if(childData>0 && childData<=9) updateDisplayText(childData.toString())
     else if(childData==0) updateDisplayText("MIN")
     else{
-      alert("Cannot unvote")
+      alert("Cannot Unvote")
       setCnt_value(childData+1)
     }
     

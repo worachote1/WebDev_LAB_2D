@@ -1,11 +1,10 @@
-import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 import FoodListComponent from './components/FoodListComponent';
 
 function App() {
 
-  const [foodData, setFoodData] = useState([{
+  const foodData = [{
     "id": uuidv4(),
     "type": "อาหารคาว",
     "name": "ข้าวผัด",
@@ -29,7 +28,7 @@ function App() {
     "id": uuidv4(),
     "type": "อาหารทอด",
     "name": "ไข่เจียว",
-    "img": "https://www.cpbrandsite.com/contents/tips_tricks/6mywyhx1dlfhzz3yzdq7ysoftizn7t1zotlqjxhn.jpg",
+    "img": "https://img.kapook.com/u/2016/wanwanat/0_edit/385698979x.jpg",
     "detail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum lacinia ipsum nec tristique. Fusce a urna neque. Phasellus pellentesque lacinia justo, quis laoreet diam interdum ut. In congue lacus non neque molestie scelerisque. Vestibulum imperdiet, magna nec ornare tristique, quam mauris lobortis tellus, et ullamcorper nibh enim et lorem."
   },
   {
@@ -39,7 +38,7 @@ function App() {
     "img": "https://static.naewna.com/uploads/news/source/628647.jpg",
     "detail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum lacinia ipsum nec tristique. Fusce a urna neque. Phasellus pellentesque lacinia justo, quis laoreet diam interdum ut. In congue lacus non neque molestie scelerisque. Vestibulum imperdiet, magna nec ornare tristique, quam mauris lobortis tellus, et ullamcorper nibh enim et lorem."
   }
-  ])
+  ]
 
   return (
     <div className="App">
