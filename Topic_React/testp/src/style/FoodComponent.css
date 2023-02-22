@@ -1,16 +1,16 @@
+.container{
+    background-color: #FAE5D3;
+    border: solid 2px black;
+    border-radius: 10px;
+}
 .food-card{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* margin-top: 10px; */
-    border: solid 2px black;
-    border-radius: 10px;
     padding: 1.5rem;
-    background: #FAE5D3;
 }
 
 .food-data div:not(:first-child){
-    /* background-color: red; */
     margin-top: 1.5rem;
 }
 
